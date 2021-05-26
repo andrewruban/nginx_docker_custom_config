@@ -8,6 +8,13 @@ echo "Nameserver is: $NAMESERVER"
 echo 'Copying nginx config'
 envsubst '\$NAMESERVER' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf
 
+# If you have several variables:
+#echo 'Copying nginx config'
+#envsubst ' \$NAMESERVER
+#\${SSO_1}
+#\${SSO_2}
+#\${WORK_ENV}' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf
+
 echo 'Using nginx config:'
 cat /etc/nginx/conf.d/default.conf
 
